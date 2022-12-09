@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Professor {
 	private String nome;
+	private Long matricula;
 	private String telefone;
 	private String curso;
 	private List<String> turmas = new ArrayList<String>();
@@ -12,8 +13,9 @@ public class Professor {
 	public Professor() {
 	}
 
-	public Professor(String nome, String telefone, String curso, List<String> turmas) {
+	public Professor(String nome, Long matricula, String telefone, String curso, List<String> turmas) {
 		this.nome = nome;
+		this.matricula = matricula;
 		this.telefone = telefone;
 		this.curso = curso;
 		this.turmas = turmas;
@@ -25,6 +27,14 @@ public class Professor {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public Long getMatricula() {
+		return matricula;
+	}
+
+	public void setMatricula(Long matricula) {
+		this.matricula = matricula;
 	}
 
 	public String getTelefone() {
@@ -53,8 +63,8 @@ public class Professor {
 
 	@Override
 	public String toString() {
-		return "Professor [nome=" + nome + ", telefone=" + telefone + ", curso=" + curso + ", turmas=" + turmas + "]";
+		return "Professor [nome=" + nome + ", matricula=" + matricula + ", telefone=" + telefone + ", curso=" + curso
+				+ ", turmas=" + turmas + "]";
 	}
-
 	
 }

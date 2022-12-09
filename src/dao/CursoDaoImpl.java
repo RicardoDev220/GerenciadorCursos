@@ -7,7 +7,7 @@ import java.util.List;
 import entidades.Curso;
 
 public class CursoDaoImpl implements CursoDao {
-	List<Curso> cursos = new ArrayList<Curso>();
+	private static List<Curso> cursos = new ArrayList<Curso>();
 
 	@Override
 	public void cadastrarCurso(Curso curso) {
@@ -20,18 +20,25 @@ public class CursoDaoImpl implements CursoDao {
 	}
 
 	@Override
-	public Curso pesquisarCursoPorNome(String nomeCurso) {
+	public Curso pesquisarCursoPorCodigo(Long codigo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Curso> pesquisarCursoPorNome(String nomeCurso) {
+		List<Curso> resultadoPesquisa = new ArrayList<Curso>();
 		Iterator<Curso> it = cursos.iterator();
 		
 		while (it.hasNext()) {
 			Curso curso = it.next();
 			
 			if(curso.getNome() == nomeCurso) {
-				return curso;
+				resultadoPesquisa.add(curso);
 			}
 		}
 		
-		return null;
+		return resultadoPesquisa;
 	}
 
 	@Override
@@ -41,13 +48,13 @@ public class CursoDaoImpl implements CursoDao {
 	}
 
 	@Override
-	public void removerCursoPorNome(String nomeCurso) {
+	public void removerCursoPorCodigo(Long codigo) {
 		Iterator<Curso> it = cursos.iterator();
 		
 		while (it.hasNext()) {
 			Curso curso = it.next();
 			
-			if(curso.getNome() == nomeCurso) {
+			if(curso.getCodigo() == codigo) {
 				it.remove();
 			}
 		}

@@ -9,9 +9,11 @@ public interface CursoDao {
 	
 	public List<Curso> listarCursos();
 	
-	public Curso pesquisarCursoPorNome(String nomeCurso);
+	public Curso pesquisarCursoPorCodigo(Long codigo);
+	
+	public List<Curso> pesquisarCursoPorNome(String nomeCurso);
 	
 	public void atualizarCurso(Curso curso);
 	
-	public void removerCursoPorNome(String nomeCurso);
+	public void removerCursoPorCodigo(Long codigo);
 }
